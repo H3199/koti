@@ -31,10 +31,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           echo "key permission set to 600"
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SERVER_URL }} >> ~/.ssh/known_hosts
+          echo "host added to known hosts"
 
       - name: Deploy via SSH
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_URL }}:${{ secrets.SSH_PORT }} << 'EOF'
-          # Commands to execute on the server
-          echo $(date -Is) Hello World! >> hello.txt
-          EOF
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_URL }}:${{ secrets.SSH_PORT }} "echo $(date -Is) Hello World! >> hello.txt"
