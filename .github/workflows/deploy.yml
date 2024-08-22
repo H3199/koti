@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_URL }}:${{ secrets.SSH_PORT }} "echo $(date -Is) Hello World! >> hello.txt"
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_URL }} -p ${{ secrets.SSH_PORT }} "echo $(date -Is) Hello World! >> hello.txt"
