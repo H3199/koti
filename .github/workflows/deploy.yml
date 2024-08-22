@@ -34,5 +34,5 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_URL }} << 'EOF'
           # Commands to execute on the server
-	        echo $(date -Is) Hello World! >> hello.txt
+          echo $(date -Is) Hello World! >> hello.txt
           EOF
