@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                chmod +x run.sh
+                chmod +x ./run.sh
                 ./run.sh
                 '''
             }
