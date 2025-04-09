@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MURMURDIR=~/murmur/data
+MURMURDIR=/home/eero/murmur/data
 
 if [ -z "$MUMBLE_PASSWORD" ]; then
     echo "Error: MUMBLE_PASSWORD is not set. Exiting."
